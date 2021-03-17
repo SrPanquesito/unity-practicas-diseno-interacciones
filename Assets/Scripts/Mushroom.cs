@@ -18,6 +18,5 @@ public class Mushroom : Interactable
 
     public override void Interact() {
         Debug.Log("Te comiste un hongo.");
-        Destroy(gameObject);
     }
 }
