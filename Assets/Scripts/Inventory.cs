@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
     // Singleton static Inventory
     static protected Inventory s_InventoryInstance;
     static public Inventory InventoryInstance {get {return s_InventoryInstance;}}
+
+    public delegate void OnChange();
+    public OnChange onChange;
 
     public int space = 10;
     public List<Item> items = new List<Item>();
@@ -17,11 +21,24 @@ public class Inventory : MonoBehaviour
         s_InventoryInstance = this;
     }
 
+    public Item[] GetAllItemsByType(ItemType type) 
+    {
+        return items.Where(i => i.itemType == type).ToArray();
+    }
+
     public void Add(Item item) 
     {
         if (items.Count < space) 
         {
+            // if (item.GetType() == typeof(Mushroom))
+            // {
+
+            // }
             items.Add(item);
+            if (onChange != null)
+            {
+                onChange.Invoke();
+            }
         }
         else 
         {
@@ -34,6 +51,10 @@ public class Inventory : MonoBehaviour
         if (items.Contains(item))
         {
             items.Remove(item);
+            if (onChange != null)
+            {
+                onChange.Invoke();
+            }
         }
         else
         {

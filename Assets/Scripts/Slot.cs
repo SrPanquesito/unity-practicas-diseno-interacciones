@@ -7,19 +7,46 @@ public class Slot : MonoBehaviour
 {
     public Item item;
     public Image image;
+    public Sprite defaultSprite;
+
+    public Text counterText;
+    public int counter = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(image != null && item != null) 
+        
+    }
+
+    public void SetItem(Item item, int count) 
+    {
+        this.item = item;
+        counter = count;
+        if(image != null) 
         {
             image.sprite = item.icon;
         }
+        if(counterText != null)
+        {
+            counterText.text = counter.ToString();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Clear() 
     {
-        
+        this.item = null;
+        image.sprite = defaultSprite;
+    }
+
+    public void UseItem()
+    {
+        if (this.item != null)
+        {
+            item.Use();
+            if (counter > 0)
+                counter--;
+            if (counterText != null)
+                counterText.text = counter.ToString();
+        }
     }
 }
