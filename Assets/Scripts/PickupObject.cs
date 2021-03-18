@@ -9,7 +9,7 @@ public class PickupObject : Interactable
 
     public override void Interact() 
     {
-        Inventory.InventoryInstance.Add(item);
         Destroy(this.gameObject);
+        Inventory.InventoryInstance.Add(item);
     }
 }

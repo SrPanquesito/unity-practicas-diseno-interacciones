@@ -20,7 +20,10 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I))
         {
             panel.SetActive(!panel.activeSelf);
-            UpdateUI();
+            if (panel.activeSelf)
+            {
+                UpdateUI();
+            }
         }
     }
 
@@ -29,8 +32,8 @@ public class InventoryUI : MonoBehaviour
         Debug.Log("Cambio el inventario");
         Slot[] slots = GetComponentsInChildren<Slot>();
         Item[] consumableItems = _inventory.GetAllItemsByType(ItemType.Consumable);
-        
-        if (consumableItems.Length > 0)
+
+        if (consumableItems.Length > 0 && slots.Length != 0)
             slots[0].SetItem(consumableItems[0], consumableItems.Length);
 
         // for (int i = 0; i < slots.Length; i++)
