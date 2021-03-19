@@ -7,11 +7,11 @@ public class Interactable : MonoBehaviour
 {
     public bool insideZone = false;
     // public KeyCode interactionButton = KeyCode.E;
-    public string interactionButton = "Interact";
+    public string interactionButton = "InteractJoystick";
 
     public virtual void Update() {
         // if(insideZone && Input.GetKeyDown(interactionButton)) {
-        if(insideZone && CrossPlatformInputManager.GetButtonDown(interactionButton)) {
+        if (insideZone && CrossPlatformInputManager.GetButtonDown(interactionButton)) {
             Interact();
         }
     }
