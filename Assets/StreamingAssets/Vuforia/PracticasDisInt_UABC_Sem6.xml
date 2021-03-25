@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="billete-500" size="1.000000 0.447619" />
+    <ImageTarget name="billete-200" size="1.000000 0.516327" />
+    <ImageTarget name="billete_100" size="1.000000 0.500000" />
+    <ImageTarget name="billete-50" size="1.000000 0.505274" />
+    <ImageTarget name="mexico-20-pesos" size="1.000000 0.536735" />
+  </Tracking>
+</QCARConfig>
