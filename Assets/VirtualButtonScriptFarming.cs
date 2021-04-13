@@ -3,29 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuforia;
 
-public class VirtualButtonScript : MonoBehaviour
+public class VirtualButtonScriptFarming : MonoBehaviour
 {
-    public Interactable interactableObject;
     public GameObject augmentable;
     public ControllerSample animations;
 
     public void OnButtonPressed(VirtualButtonBehaviour vb)
     {
-        //interactableObject.Interact();
-        animations.gathering = true;
-        Debug.Log("Se presiono el button Gathering");
+        animations.farming = true;
+        Debug.Log("Se presiono el button Farming");
     }
 
     public void OnButtonReleased(VirtualButtonBehaviour vb)
     {
-        animations.gathering = false;
-        Debug.Log("Se levanto el button Gathering");
+        animations.farming = false;
+        Debug.Log("Se levanto el button Farming");
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        augmentable = GameObject.Find("BotonGathering");
+        augmentable = GameObject.Find("BotonFarming");
         augmentable.GetComponent<VirtualButtonBehaviour>().RegisterOnButtonPressed(OnButtonPressed);
         augmentable.GetComponent<VirtualButtonBehaviour>().RegisterOnButtonReleased(OnButtonReleased);
     }

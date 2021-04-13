@@ -548,6 +548,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1714864275}
     m_Modifications:
+    - target: {fileID: 5725985568212081954, guid: 210ea86c955a5db419b0ad0a777d2bbe, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 74cdf007ef79db84dbaf9cc176cb3483, type: 2}
     - target: {fileID: 5725985568212081955, guid: 210ea86c955a5db419b0ad0a777d2bbe, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -615,6 +619,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5725985568212081955, guid: 210ea86c955a5db419b0ad0a777d2bbe, type: 3}
   m_PrefabInstance: {fileID: 273074895}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &273074897 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5725985568212081956, guid: 210ea86c955a5db419b0ad0a777d2bbe, type: 3}
+  m_PrefabInstance: {fileID: 273074895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &273074898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273074897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0945e89b3a9edc342be62db84957d94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gathering: 0
+  farming: 0
 --- !u!1 &301550271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1189,7 @@ GameObject:
   - component: {fileID: 599637833}
   - component: {fileID: 599637832}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: QuadGathering
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1338,7 +1361,7 @@ GameObject:
   - component: {fileID: 689173013}
   - component: {fileID: 689173012}
   m_Layer: 0
-  m_Name: Boton1
+  m_Name: BotonGathering
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1372,6 +1395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableObject: {fileID: 1216953381}
   augmentable: {fileID: 0}
+  animations: {fileID: 273074898}
 --- !u!33 &689173013
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1445,7 +1469,7 @@ MonoBehaviour:
   m_Script: {fileID: -1539294719, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mName: Boton1
+  mName: BotonGathering
   mSensitivity: 1
   mHasUpdatedPose: 1
   mPrevTransform:
