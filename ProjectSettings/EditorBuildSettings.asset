@@ -4,5 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Practica7.unity
+    guid: 2aa741baa10b53b4f91e63eb6568253d
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a93ea282cf55f7a498db91fe5cd1547b, type: 2}
