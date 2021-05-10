@@ -456,6 +456,7 @@ MonoBehaviour:
   exitButton: ExitButton
   pauseButton: PauseButton
   resumeButton: ResumeButton
+  voiceCommand: inventario
 --- !u!114 &78686230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2512,6 +2513,7 @@ MonoBehaviour:
   - salta
   - brinca
   - come
+  - inventario
 --- !u!4 &512959204
 Transform:
   m_ObjectHideFlags: 0

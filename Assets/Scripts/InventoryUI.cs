@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using IBM.Watsson.Examples;
 
 public class InventoryUI : MonoBehaviour
 {
@@ -13,12 +14,17 @@ public class InventoryUI : MonoBehaviour
     public string pauseButton = "PauseButton";
     public string resumeButton = "ResumeButton";
 
+    public string voiceCommand = "inventario";
+
     // Start is called before the first frame update
     void Start()
     {
         panel.SetActive(false);
         _inventory = Inventory.InventoryInstance;
         _inventory.onChange += UpdateUI; 
+
+        SpeechToText commandProcessor = GameObject.FindObjectOfType<SpeechToText>();
+        commandProcessor.onVoiceCommandRecognized += OnVoiceCommandRecognized;  
     }
 
     // Update is called once per frame
@@ -44,6 +50,17 @@ public class InventoryUI : MonoBehaviour
         }
         if (CrossPlatformInputManager.GetButtonDown(exitButton)) {
             Application.Quit();
+        }
+    }
+
+    public void OnVoiceCommandRecognized(string command) {
+        if (command.ToLower() == voiceCommand.ToLower())
+        {
+            panel.SetActive(!panel.activeSelf);
+            if (panel.activeSelf)
+            {
+                UpdateUI();
+            }
         }
     }
 

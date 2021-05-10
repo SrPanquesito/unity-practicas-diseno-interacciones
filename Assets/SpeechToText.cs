@@ -220,6 +220,7 @@ namespace IBM.Watsson.Examples
 
                         foreach (var word in alt.transcript.Split(' '))
                         {
+                            Debug.Log(word);
                             if (commands.Contains(word.ToLower()))
                             {
                                 Debug.Log("Comando detectado: " + word.ToLower());
